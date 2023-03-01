@@ -10,7 +10,7 @@
 ### 
 
 install_deeplx(){
-    last_version=$(curl -Ls "https://ghproxy.com/https://api.github.com/repos/OwO-Network/DeepLX/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+    last_version=$(curl -Ls "https://api.github.com/repos/OwO-Network/DeepLX/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
     if [[ ! -n "$last_version" ]]; then
         echo -e "${red}Failed to detect DeepLX version, probably due to exceeding Github API limitations.${plain}"
         exit 1
